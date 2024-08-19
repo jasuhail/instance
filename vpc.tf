@@ -79,7 +79,7 @@ resource "aws_route_table" "kube-public" {
 
 # route associations public
 resource "aws_route_table_association" "kube-public-1-a" {
-  subnet_id      = aws_subnet.kube-public-1.id
+  subnet_id      = aws_subnet.kube_public-1.id
   route_table_id = aws_route_table.kube-public.id
 }
 

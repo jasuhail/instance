@@ -18,7 +18,7 @@ terraform {
   backend "s3" {
     bucket = "jasuuk-state-file"
     key    = "kubernetes.tfstate"
-    region = "eu-west-1"
+    region = var.AWS_REGION
     dynamodb_table = "openvpn-terraform-s3"
   }
 }

@@ -17,7 +17,6 @@ data "aws_ami" "ubuntu" {
   }
 
   owners = ["099720109477"] # Canonical's AWS account ID
-  region = var.AWS_REGION
 }
 
 # You can access the AMI ID like this
