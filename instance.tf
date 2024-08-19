@@ -3,7 +3,7 @@ resource "aws_instance" "control" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3a.medium"
   key_name      = "EC2Acces"
-  subnet_id     = aws_subnet.kube-public-1.id
+  subnet_id     = aws_subnet.kube_public-1.id
   vpc_security_group_ids = [aws_security_group.kube_sg.id]
 
   tags = {
@@ -15,7 +15,7 @@ resource "aws_instance" "node_1" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name      = "EC2Acces"
-  subnet_id     = aws_subnet.kube-public-1.id
+  subnet_id     = aws_subnet.kube_public-1.id
   vpc_security_group_ids = [aws_security_group.kube_sg.id]
 
   tags = {
@@ -27,7 +27,7 @@ resource "aws_instance" "node_2" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name      = "EC2Acces"
-  subnet_id     = aws_subnet.kube-public-1.id
+  subnet_id     = aws_subnet.kube_public-1.id
   vpc_security_group_ids = [aws_security_group.kube_sg.id]
 
   tags = {
