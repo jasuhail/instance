@@ -9,6 +9,9 @@ resource "aws_instance" "control" {
   tags = {
     Name = "Control"
   }
+  user_data = templatefile("${path.module}/setup.sh", {
+    HOSTNAME = "control"
+  })
 }
 
 resource "aws_instance" "node_1" {
@@ -21,6 +24,10 @@ resource "aws_instance" "node_1" {
   tags = {
     Name = "Node-1"
   }
+  user_data = templatefile("${path.module}/setup.sh", {
+    HOSTNAME = "node-1"
+  })
+
 }
 
 resource "aws_instance" "node_2" {
@@ -33,6 +40,9 @@ resource "aws_instance" "node_2" {
   tags = {
     Name = "Node-2"
   }
+  user_data = templatefile("${path.module}/setup.sh", {
+    HOSTNAME = "node-2"
+  })
 }
 
 # Output the public IPs of the instances if needed
