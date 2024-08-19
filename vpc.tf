@@ -93,9 +93,9 @@ resource "aws_route_table_association" "kube-public-3-a" {
   route_table_id = aws_route_table.kube-public.id
 }
 
-resource "aws_eip" "kube_eip" {
-  vpc      = true
-  tags = {
-    Name = "kube Elastic IP"
-  }
-}
+#resource "aws_eip" "kube_eip" {
+#  vpc      = true
+#  tags = {
+#    Name = "kube Elastic IP"
+#  }
+#}
